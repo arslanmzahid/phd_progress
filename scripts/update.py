@@ -52,7 +52,7 @@ weights = {}
 for c in chapters:
     w = c["properties"].get("Weight %", {}).get("number")
     if w:
-        weights[title(c)] = w
+        weights[select(c, "Chapter") or title(c)] = w
 
 counts = {n: {"done": 0, "prog": 0, "todo": 0} for n in weights}
 for p in pages:
